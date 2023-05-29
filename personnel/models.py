@@ -14,17 +14,17 @@ class Personnel(models.Model):
     first_name= models.CharField(max_length=32)
     last_name= models.CharField(max_length=32)
     GENDER=(
-        ('Female', 'F'),
-        ('Male', 'M'),
-        ('Prefer not to say', 'N'),
+        ('F','Female' ),
+        ('M','Male'),
+        ('N','Prefer not to say'),
     )
-    gender =  models.CharField(max_length=1 , choices=GENDER, default='N')
+    gender =  models.CharField(max_length=1 , choices=GENDER)
     TITLE=(
         ('S', 'Senior'),
         ('M', 'Med-Senior'),
         ('J', 'Junior'),
     )
-    title =  models.CharField(max_length=1 , choices=TITLE, default='J')
+    title =  models.CharField(max_length=1, choices=TITLE)
     salary= models.IntegerField()
     started = models.DateField()
     department_id = models.ForeignKey(Department, on_delete=models.SET_NULL , null=True)
