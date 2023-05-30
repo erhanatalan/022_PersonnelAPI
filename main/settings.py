@@ -142,3 +142,8 @@ REST_FRAMEWORK = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+REST_AUTH_SERIALIZERS = {
+    # 'TOKEN_SERIALIZER': 'path.to.custom.TokenSerializer',
+    'TOKEN_SERIALIZER': 'users.serializers.CustomTokenSerializer',
+}
