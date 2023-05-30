@@ -11,5 +11,5 @@ urlpatterns = [
     path('departments/<int:pk>/', DepartmentRUDView.as_view()),
     path('personnels/', PersonnelListCreateView.as_view()),
     path('personnels/<int:pk>/', PersonnelRUDView.as_view()),
-    path('department-personnels/', DepartmentPersonnelView.as_view()),
+    path('departments/<str:department>/', DepartmentPersonnelView.as_view()),
 ]
