@@ -9,4 +9,10 @@ class DepartmentSerializer(serializers.ModelSerializer):
 class PersonnelSerializer(serializers.ModelSerializer):
     class Meta:
         models = Personnel
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'title')
+        
+class DepartmentPersonnelSerializer(serializers.ModelSerializer):
+    personnel = PersonnelSerializer(many=True, read_only=True)
+    class Meta:
+        models = Department
+        fields = ('id', 'name', 'personnel')
